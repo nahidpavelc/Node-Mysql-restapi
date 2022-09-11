@@ -26,7 +26,7 @@ var dbConn = mysql.createConnection({
 // connect to database
 dbConn.connect();
 
-//Retrive All items
+// Retrieve All items
 app.get('/items', (req, res) => {
   dbConn.query('SELECT * FROM items', (error, results, fields) => {
     if (error) throw error;
@@ -34,7 +34,7 @@ app.get('/items', (req, res) => {
   });
 });
 
-// Retrieve all users 
+// Retrieve all users
 app.get('/users', function (req, res) {
   dbConn.query('SELECT * FROM users', (error, results, fields) => {
     if (error) throw error;
@@ -54,7 +54,7 @@ app.get('/user/:id', (req, res) => {
   });
 });
 
-// Add a new user  
+// Add a new user
 app.post('/user', (req, res) => {
   let user = req.body.user;
   if (!user) {
